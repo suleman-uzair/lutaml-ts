@@ -12,8 +12,8 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 export const PIN = {
   package: "moxml-ts",
   version: "0.1.0",
-  // lutaml/moxml-ts#9 (draft) head; the repo's package-lock.json must resolve to it.
-  commit: "a78091f7b11bb350fdd18a8dc6e12b3ae39661fd",
+  // lutaml/moxml-ts feat/comment-pi-constructors head (moxml-ts#9 + comment/CDATA/PI constructors); the repo's package-lock.json must resolve to it.
+  commit: "ea067e15a3ef66415555e13a745a5d913c4a4b76",
   // First 16 hex chars of the sha256 of the vendored wasm bundles (no .pin files ship in the install).
   leptrisWasm: "57248e229bf3303f",
   moxmlWasm: "87bed5fe83f5d7e8",
@@ -28,7 +28,7 @@ async function load() {
     return await import("moxml-ts");
   } catch (cause) {
     const e = new Error(
-      "MOXML_TS_UNAVAILABLE: moxml-ts is not installed (not on npm; run `npm ci` (moxml-ts is a git dependency at lutaml/moxml-ts#9 " +
+      "MOXML_TS_UNAVAILABLE: moxml-ts is not installed (not on npm; run `npm ci` (moxml-ts is a git dependency at lutaml/moxml-ts feat/comment-pi-constructors " +
         PIN.commit.slice(0, 7) + "; see docs/xml-capabilities.md): " +
         String(cause.message).split("\n")[0],
     );
