@@ -7,7 +7,7 @@ Exit codes: 0 all observations match, 1 drift, 2 moxml-ts not installed
 
 ## Pin and install
 
-- `lutaml/moxml-ts` branch `feat/codec-faces-on-main` head `5c104dd8d9f01f06cb42f10c201a32c01354e337` (draft PR #37: main 0.1.7 plus the #9 codec faces and comment/CDATA/PI constructors, leptris-wasm 1.9.0),
+- `lutaml/moxml-ts` main `216d56f93b733e6408772b607dbb4c5bbd489080` (merge of PR #37: 0.1.7 plus the codec faces and comment/CDATA/PI constructors, leptris-wasm 1.9.0),
   a git dependency in `package.json`; `npm ci` runs its `prepare` script (fetches the wasm bundles and builds
   `dist/`). The probe checks the version, the locked commit and a sha256 prefix of each vendored wasm bundle.
 - Not on npm. When it is not installed the probe exits 2 with `MOXML_TS_UNAVAILABLE` and the vitest cases skip.
